@@ -1,0 +1,23 @@
+{
+  "schema_version": "xauusd-features-v1",
+  "timeframe": "M30",
+  "bar_policy": "Only completed bars; higher-timeframe values use the last completed H1, H4 and D1 bars.",
+  "features": [
+    {"name": "trend_direction", "type": "float", "range": [-1, 1], "definition": "Sign of the vote from H1, H4 and D1 EMA(20) versus EMA(50) trends."},
+    {"name": "mtf_alignment", "type": "float", "range": [0, 1], "definition": "Fraction of H1, H4 and D1 trend votes matching the composite direction; 0 when the vote is neutral."},
+    {"name": "structure_break", "type": "float", "range": [-1, 1], "definition": "1 when latest completed M30 close exceeds prior 20-bar high; -1 below prior 20-bar low; otherwise 0."},
+    {"name": "liquidity_sweep", "type": "float", "range": [-1, 1], "definition": "1 for a low sweep and close reclaim of prior 10-bar low; -1 for a high sweep and close reclaim below prior 10-bar high; otherwise 0."},
+    {"name": "sr_distance_atr", "type": "float", "definition": "(Latest close minus midpoint of prior 20-bar range) divided by ATR(14)."},
+    {"name": "candle_body_atr", "type": "float", "definition": "(Latest completed close minus open) divided by ATR(14)."},
+    {"name": "volatility_atr", "type": "float", "range": [0, 1], "definition": "ATR(14) divided by latest completed close."},
+    {"name": "momentum", "type": "float", "definition": "(Latest close minus close five bars earlier) divided by ATR(14)."},
+    {"name": "spread_atr", "type": "float", "range": [0, 10], "definition": "Current full bid-ask spread divided by ATR(14)."},
+    {"name": "session_code", "type": "float", "range": [0, 3], "definition": "Approximate UTC sessions: 0 Asia/off, 1 London, 2 New York, 3 overlap."}
+  ],
+  "classes": ["BUY_SETUP", "SELL_SETUP", "NO_TRADE"],
+  "caveats": [
+    "This schema describes model inputs, not a complete trade authorization.",
+    "The service returns no calibrated win probability.",
+    "EA and training feature implementations must be kept in sync when this schema changes."
+  ]
+}

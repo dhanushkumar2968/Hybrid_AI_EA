@@ -1,0 +1,10 @@
+{
+  "source_timeframe": "M30",
+  "forward_horizon_bars": 5,
+  "fallback_spread_price": null,
+  "slippage_price_per_side": 0.05,
+  "commission_usd_per_lot_round_turn": 7.0,
+  "contract_size_oz_per_lot": 100.0,
+  "lots_for_cost_conversion": 1.0,
+  "note": "Illustrative defaults only. Replace with broker-specific historical spread, commission, contract size and slippage assumptions."
+}

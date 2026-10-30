@@ -1,0 +1,1 @@
+This folder preserves the generated pre-integration MQL sources as an archive. The active EA uses the existing MT5 MTF, D1, and M30 engines copied into MQL5/Experts. These archived modules are not compiled or included by the EA.
